@@ -1,10 +1,10 @@
-import express from 'express'
 import mongoose from 'mongoose'
-
+import * as dotenv from 'dotenv'
+dotenv.config()
 export  const connectDB =async()=>{
     try {
         mongoose.set('strictQuery',true) //for search functionality
-        await mongoose.connect("mongodb+srv://harish14gdscjdcoem:VIrYrL0HRqVbLc6R@cluster0.vijea5l.mongodb.net/test")
+        await mongoose.connect(process.env.VITE_CONNECT_URL)
         console.log("MongoDB connected Successfully")  
     } catch (error) {
         console.log(error)

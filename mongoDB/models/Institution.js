@@ -1,28 +1,28 @@
 import mongoose, { SchemaType } from "mongoose";
 const { Schema } = mongoose
+
 const InstituteSchema = new Schema({
     name: {
         type: String,
         required: true
     },
+    email:{type:String},
     password:
     {
         type: String,
         required: true
     },
-    address: {
-        type: [String],
+    address: [{ type: String }],
+    social_links: [
+        {
+            type_link: {
+                type: String,
+                enum: ['youtube', 'facebook', 'linkdin', 'instagram', 'whatapp', 'website'],
+            },
+            description: { type: String }
+        }
 
-
-    },
-    social_links: {
-        type_link : {type:String ,
-        enum :  ['youtube', 'facebook', 'linkdin' ,'instagram' ,'whatapp','website'],
-        },
-        description:{type:String}
-
-
-    },
+    ],
     joining_date: {
         type: Date,
         default: Date.now
@@ -38,8 +38,8 @@ const InstituteSchema = new Schema({
     }
     ,
     updated: {
-        type:Date ,
-        default:Date.now
+        type: Date,
+        default: Date.now
     }
 
 
@@ -47,7 +47,9 @@ const InstituteSchema = new Schema({
 });
 const Institution = mongoose.model('institute', InstituteSchema)
 
-export default Institution ;
+export default Institution;
+
+
 // name_institution :String ,
 // password :String ,
 

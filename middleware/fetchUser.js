@@ -10,7 +10,11 @@ if(!token){
 
 try {
   const data = jwt.verify(token , process.env.VITE_JSION_SECRET)
+  if(!data){
+    res.status(404).json({success:false , msg:"Your Authentication token is epried please  login again for generate new token "})
+  }
 req.user = data.user  //for send the data towords the next
+
 
 next();
     

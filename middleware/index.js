@@ -1,3 +1,3 @@
 import fetchUser from './fetchUser.js'
-
-export {fetchUser}
+import fetchInstitutor from './fetchInstitutor.js'
+export {fetchUser ,fetchInstitutor }

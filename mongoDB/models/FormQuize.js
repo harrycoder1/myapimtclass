@@ -6,15 +6,19 @@ const FormSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'institute'
     },
+    date: {
+        type: Date,
+        default: Date.now,
+    },
     title: { type: String },
     description: { type: String },
     formMakerEmail: { type: String },
     questions: [
         {
-            id: { type: String },
+
             queMsg: { type: String },
             answers: [
-                { id: { type: String }, value: { type: String }, correct: { type: Boolean } }
+                { value: { type: String }, correct: { type: Boolean } }
             ]
         }
     ]
