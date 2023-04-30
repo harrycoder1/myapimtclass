@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import * as dotenv from 'dotenv';
 
 const fetchInstitutor=(req,res,next)=>{
-const token = req.header('auth-token')
+const token = req.header('inst-token')
 if(!token){
     // when token has not been send to the url then execute
     return res.status(408).json({success:false , msg:"Please Authenticate wiht Valid Token !"});
