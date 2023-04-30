@@ -17,7 +17,7 @@ app.use('/api/v1/institution/form',formquizeRoutes);
 app.use('/api/v2/formreacords' ,quizeAnswerRoutes)
 
 app.get('/',(req,res)=>{
-    res.send("we are connected")
+    res.send("Hi There !\n This is Harish Hedau")
 })
 app.listen(8080,()=>{
     console.log("api are started Successfully !\n Port : http://localhost:8080")
