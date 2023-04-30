@@ -71,7 +71,7 @@ router.post('/create',
                     id: saveData._id,
                 }
             }
-            const authToken = jwt.sign(dataSend, process.env.VITE_JSION_SECRET, { expiresIn: 60 * 60 * 24 })
+            const authToken = jwt.sign(dataSend, process.env.VITE_JSION_SECRET)
 
             res.status(202).json({ success: true, authToken: authToken })
 
@@ -115,7 +115,7 @@ router.post('/login',
                 id: iuser._id,
             }
         }
-        const authtoken = jwt.sign(sendData, process.env.VITE_JSION_SECRET, { expiresIn: 60 * 60 * 24 });
+        const authtoken = jwt.sign(sendData, process.env.VITE_JSION_SECRET);
         res.status(206).json({ success: true, authtoken: authtoken })
     } catch (error) {
         res.status(504).json({success:false ,msg:"Internal Server Error Occured"})    

@@ -57,7 +57,7 @@ router.post('/createuser',
             // generate web Token
             const authToken = jwt.sign(
                 sendData
-                , process.env.VITE_JSION_SECRET, { expiresIn: 60 * 60 * 24 });
+                , process.env.VITE_JSION_SECRET);
 
             res.status(200).json({ "suucess": true, authToken: authToken })
 
@@ -99,7 +99,7 @@ router.post("/login", [
             }
         }
         // For generate JSON webToken 
-        const authToken = jwt.sign(sendData, process.env.VITE_JSION_SECRET, { expiresIn: 60 * 60 * 24 })
+        const authToken = jwt.sign(sendData, process.env.VITE_JSION_SECRET)
 
         res.status(202).json({ success: true, authToken })
 
