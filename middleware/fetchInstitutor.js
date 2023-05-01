@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 import * as dotenv from 'dotenv';
 
+dotenv.config();
 const fetchInstitutor=(req,res,next)=>{
 const token = req.header('inst-token')
 if(!token){
